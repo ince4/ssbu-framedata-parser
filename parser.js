@@ -2,7 +2,7 @@ const cheerio = require('cheerio')
 const request = require('request')
 const fs = require('fs')
 
-let HOSTNAME = 'https://ultimateframedata.com/'
+let HOSTNAME = 'https://ultimateframedata.com'
 let path = ''
 let reqOptions = {
     url: HOSTNAME,
@@ -85,10 +85,10 @@ function writeFile (fileName, data) {
 async function getMoveFrameData (characterName, moveType, moveName) {
     let charList = await getCharList() 
     const URL = HOSTNAME + charList[characterName]['href']
-    
-    request(URL, function(error, response, body) {
-        let $ = cheerio.load(body)
-    })
+    console.log(URL)
+    // request(URL, function(error, response, body) {
+    //     let $ = cheerio.load(body)
+    // })
 }
 
-getCharList()
+getMoveFrameData('Mario')
