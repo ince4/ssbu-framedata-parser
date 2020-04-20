@@ -1,7 +1,4 @@
-const https = require('https')
-const cheerio = require('cheerio')
-const request = require('request')
+const parser = require('./parser')
 
-request('https://baidu.com/', function(error, response, body) {
-    console.log(body)
-})
+parser.getCharFrameData('Wolf')
+    .then(data => {console.log(data)})

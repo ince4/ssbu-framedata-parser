@@ -80,7 +80,7 @@ function getCharList () {
     })
 }
 
-function getMoveFrameData (characterName) {
+function getCharFrameData (characterName) {
     return new Promise (async function(resolve, reject) {
         let charList = await getCharList()
 
@@ -107,5 +107,6 @@ function getMoveFrameData (characterName) {
     })
 }
 
-    getMoveFrameData('Mario')
-  
+module.exports = {
+    getCharFrameData
+}
